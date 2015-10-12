@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root :to => "types#index"
 
-  resources :types
+  resources :types do
+    resources :tasks
+  end
 end

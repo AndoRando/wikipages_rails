@@ -1,7 +1,15 @@
 <h1>Business Types</h1>
 
+<%= render 'form', :object => @type %>
+
 <ul>
   <% @types.each do |type| %>
-    <li><%= link_to type.name, type_path(type) %></li>
+    <li>
+      <%= link_to type.name, type_path(type) %> -
+      <%= link_to "Edit", edit_type_path(type) %> -
+      <%= link_to "Delete", type_path(type), :data => {:confirm => "Are you sure?", :method => "delete"} %>
+    </li>
   <% end %>
 </ul>
+
+<!-- <%= link_to "New Business Type", new_type_path %> -->
